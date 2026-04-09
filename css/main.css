@@ -1427,6 +1427,7 @@ header.siteheader {
 
 .noncustomizeablecardsrow .col-image .image {
   position: relative;
+  border-radius: 50px;
 }
 
 .noncustomizeablecardsrow .col-image .image img {
@@ -2369,4 +2370,117 @@ button.deletebtn {
 }
 .checkoutpgsec {
   padding-bottom: 80px;
+}
+.noncustomizeablecardsrow .col-image .image {
+  position: relative;
+  background-size: cover;
+  height: 409px;
+}
+.image.infrontcard {
+  padding: 60px;
+}
+.cardfrontdetails * {
+  font-size: 22px;
+}
+.noncustomizeablecardsrow .col-image .image img {
+  width: 140px;
+}
+.cardfrontdetails {
+  text-align: left;
+  margin-top: 145px;
+  opacity: 0.5;
+}
+.cardfrontdetails .companynamecarddt {
+  font-size: 16px;
+}
+.cardlogo.left {
+    text-align: left;
+    opacity: 0.6;
+}
+.cardimagecustomize {
+  position: relative;
+  perspective: 1000px;
+}
+/* .image.infrontcard {
+  display: none;
+} */
+/* .image.backsidecard.active,
+.image.infrontcard.active {
+  display: inline-block !important;
+} */
+.image.backsidecard{
+  position: absolute !important;
+  top: 0;
+}
+.image {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 12px;
+  transition: all 0.5s ease;
+}
+
+.infrontcard {
+  opacity: 1;
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.backsidecard {
+  opacity: 0;
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+/* Active states */
+.infrontcard.active {
+  opacity: 1;
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.backsidecard.active {
+  opacity: 1;
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+/* Hide inactive */
+.infrontcard:not(.active) {
+  opacity: 0;
+  transform: rotateY(-180deg);
+  z-index: 1;
+}
+
+.backsidecard:not(.active) {
+  opacity: 0;
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+.cardlogo.right {
+  text-align: end;
+  opacity: 0.6;
+}
+.cardlogo.center {
+  opacity: 0.6;
+  margin-top: 90px;
+  margin-bottom: -60px;
+}
+.cardlogo.bottom {
+  position: absolute;
+  bottom: 60px;
+  opacity: 0.6;
+  right: 70px;
+}
+.noncustomizeablecardsrow .col-image {
+  position: sticky;
+  top: 50px;
+}
+.noncustomizeablecardsrow {
+  align-items: flex-start;
+}
+p.tabcard {
+  cursor: pointer;
 }

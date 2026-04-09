@@ -253,3 +253,61 @@ $(document).on('click', '.carboxtabs li, .pricecartbox li', function(){
     $('#'+tabId).addClass('active').show();
 
 });
+
+$('.tabcard, .refreshicon').click(function(e){
+  e.preventDefault();
+
+  let parent = $(this).closest('.cardimagecustomize');
+
+  let front = parent.find('.infrontcard');
+  let back = parent.find('.backsidecard');
+
+  if(front.hasClass('active')){
+    front.removeClass('active');
+    back.addClass('active');
+  } else {
+    back.removeClass('active');
+    front.addClass('active');
+  }
+
+});
+$('.fullname').on('input', function(){
+  $('.namecarddt').text($(this).val() || 'First Name, Last Name');
+});
+
+$('.companyname').on('input', function(){
+  $('.companynamecarddt').text($(this).val() || 'Company Name');
+});
+$(document).ready(function(){
+
+  $(document).on('input', '.fullname', function(){
+    let value = $(this).val().trim();
+
+    $('.namecarddt').text(
+      value !== '' ? value : 'First Name, Last Name'
+    );
+  });
+
+  $(document).on('input', '.companyname', function(){
+    let value = $(this).val().trim();
+
+    $('.companynamecarddt').text(
+      value !== '' ? value : 'Company Name'
+    );
+  });
+
+});
+$('input[name="option"]').on('change', function(){
+
+  let value = $(this).val();
+
+  // sab classes remove
+  $('.cardlogo').removeClass('left right bottom center');
+
+  // directly add class based on value
+  if(value == '1') $('.cardlogo').addClass('left');
+  if(value == '2') $('.cardlogo').addClass('right');
+  if(value == '3') $('.cardlogo').addClass('bottom');
+  if(value == '4') $('.cardlogo').addClass('center');
+
+});
